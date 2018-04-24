@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Eunice Waimai</title>
+</head>
+<body>
+
+    <h1>Eunice Fusion Restaurant</h1>
+    <P>Tasty Treats To Your Door</P>
+
+    <h2>Here are all our dishes!</h2>
+
+    <!-- Item 1 -->
+    <p>Pizza: 80RMB</p>
+    <img src="https://tse1-mm.cn.bing.net/th?id=OIP.EGGtH-Ne07qobnfeqQVFFwHaFG&pid=Api">
+    <br>
+
+    <!-- Item 2 -->
+    <p>Hot dog: 12RMB</p>
+    <img src="https://tse2.mm.bing.net/th?id=OIP.b7gaP88IQPpxPbQBVgLN-wHaF-&pid=Api">
+
+    <!-- Item 3 -->
+    <p>Taco: 30RMB</p>
+    <img src="https://tse2.mm.bing.net/th?id=OIP.ZdiDLmP1hdWU_y-QE5GIQQHaE8&pid=Api">
+
+
+
+    <!-- Order Form -->
+    <h2>Place your Order</h2>
+    <form action="{% url 'order:home_page' %}" method="POST">
+          {% csrf_token %}
+          <input type="text" name="order" placeholder="Please Type Which Item You Want"><br>
+          <textarea name="address" placeholder="Please Type Your Address"></textarea><br>
+          <input type="submit" value="Place Your Order">
+    </form>
+
+    <!-- Show Order -->
+    <h1>Your Order:</h1>
+    <P>Item Ordered:{{order}}</P>
+    <P>Delivery Address:{{address}}</P>
+
+</body>
+</html>
